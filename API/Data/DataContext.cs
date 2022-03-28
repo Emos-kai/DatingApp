@@ -14,10 +14,11 @@ namespace API.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<AppUser>(entity => {
-                entity.HasNoKey();
                 entity.ToTable("UserDB");
                 entity.Property(e => e.Id).HasColumnName("Id");
                 entity.Property(e => e.UserName).HasColumnName("Username");
+                entity.Property(e => e.PasswordHash).HasColumnName("PasswordHash");
+                entity.Property(e => e.PasswordSalt).HasColumnName("PasswordSalt");
             });
         }
     }

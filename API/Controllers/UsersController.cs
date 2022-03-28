@@ -5,14 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class UserController : ControllerBase
+    public class UsersController : BaseApiController
     {
         private readonly DataContext _dataContext;
-         private readonly ILogger<UserController> _logger;
+         private readonly ILogger<UsersController> _logger;
 
-        public UserController(DataContext dataContext, ILogger<UserController> logger)
+        public UsersController(DataContext dataContext, ILogger<UsersController> logger)
         {
             _dataContext = dataContext;
             _logger = logger;
